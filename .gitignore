@@ -8,3 +8,4 @@ target/*
 **/target
 test/
 file_test/
+.idea
