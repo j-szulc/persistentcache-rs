@@ -242,7 +242,6 @@
 #![recursion_limit = "1024"]
 #![allow(unused_imports)]
 #![warn(missing_docs)]
-#![feature(proc_macro_hygiene)]
 #[macro_use]
 extern crate error_chain;
 extern crate fs2;
@@ -278,9 +277,9 @@ pub const PREFIX: &str = "pc";
 /// Traits which need to be implemented by any storage
 pub trait PersistentCache {
     /// Return serialized value of variable
-    fn get(&mut self, &str) -> Result<Vec<u8>>;
+    fn get(&mut self, _: &str) -> Result<Vec<u8>>;
     /// Set serialized value of variable
-    fn set(&mut self, &str, &[u8]) -> Result<()>;
+    fn set(&mut self, _: &str, _: &[u8]) -> Result<()>;
     /// Flush storage
     fn flush(&mut self) -> Result<()>;
 }

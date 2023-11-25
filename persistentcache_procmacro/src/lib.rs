@@ -12,7 +12,6 @@
 //!
 //! I would not have managed to write this code without the ideas that I shamelessly stole from
 //! [accel](https://github.com/termoshtt/accel/).
-#![feature(proc_macro)]
 #![recursion_limit = "256"]
 
 #[macro_use]
@@ -29,6 +28,7 @@ struct Function {
     ident: Ident,
     vis: Visibility,
     block: Box<Block>,
+    #[allow(dead_code)]
     unsafety: Unsafety,
     inputs: delimited::Delimited<FnArg, tokens::Comma>,
     output: FunctionRetTy,
