@@ -9,3 +9,4 @@ target/*
 test/
 file_test/
 .idea
+.DS_Store
